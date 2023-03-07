@@ -1,0 +1,42 @@
+<head>
+  <link rel="stylesheet" href="/Users/shreysharma/Documents/Shrey SNU/Fifth Sem(Monsoon2022)/CSD317(DBMS)/DBMS Project/virtualenv_DBMS_project/static/css/form_style.css">
+    <!-- <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='css/master.css') }}"> -->
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='css/form_style.css') }}">
+    <meta charset="utf-8">
+  <title>MySql Project</title>
+</head>
+<body class="mybody_bg">
+  <div class="registration-form">
+          <form method="POST" action="{{ url_for('login_page') }}">
+
+
+              <div class="form-group">
+                  <input type="text" name="signup_fname_btn" class="form-control item2" placeholder="First Name">
+              </div>
+              <div class="form-group">
+                  <input type="text" name="signup_lname_btn" class="form-control item2" placeholder="Last Name">
+              </div>
+              <div class="form-group">
+                  <input type="text" name="signup_username_btn" class="form-control item2" placeholder="Username">
+              </div>
+              <div class="form-group">
+                  <input type="password" name = "signup_phone_btn" class="form-control item2" placeholder="Phone Number">
+              </div>
+              <div class="form-group">
+                  <input type="password" name = "signup_password_btn" class="form-control item2" placeholder="Password">
+              </div>
+              <div class="form-group">
+                  <input type="text" name = "signup_cv_flag_btn" class="form-control item2" placeholder="vendor(1) / customer(0)">
+              </div>
+              <div class="form-group">
+                  <button name = "register_btn" class ="btn btn-block submit" value="val_signup">Register</button>
+              </div>
+              <p>Already have an account?</p>
+              <p>
+                <a href="{{ url_for('login_page') }}">Login</a>
+              </p>
+          </form>
+
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+{% extends "base_customer.html" %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+     <link rel="stylesheet" href="url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");">
+
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% block content %}
+    <!-- welcome three lines -->
+    <!-- <p class="large rise">Welcome, {{name}}!</p> -->
+     <div class="main_content small scale-in">
+       <p >Your budget : {{budget[0]}}</p>
+       <p >Your expenditure: {{ expen[0] }}</p>
+
+       <script>
+        function myFunction() {
+          var x = document.getElementById("hid_div");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+      </script>
+
+      <form class="" action= "{{ url_for('transaction_list_page') }}">
+        <div>
+         <button class="mybtn" name="trans_view_btn">View all transactions</button>
+       </div>
+      </form>
+       <!-- cahnge budget and budget form -->
+       <p>
+         <button class="mybtn" onclick="myFunction()">Change Budget</button>
+       </p>
+
+
+      <div style="display: none"id="hid_div">
+        <form class="" method="POST" action= "{{ url_for('customer_page') }}" >
+          <div>
+           <p><input class="myinput"name = "new_budget_btn"type="text" placeholder="new budget" required></p>
+           <button class="mybtn" name="update_bud_btn"class ="btn btn-block submit" value="val_bud">update</button>
+         </div>
+       </form>
+      </div>
+       <!-- <label for="cars">Sort by:</label> -->
+
+   <!-- <select name="cars" id="cars">
+     <option value="sort_date">Date</option>
+     <option value="sort_frequency">frequency</option>
+     <option value="sort_price">price</option>
+   </select> -->
+
+
+
+
+     </div>
+
+    {% endblock %}
+  </body>
+</html>

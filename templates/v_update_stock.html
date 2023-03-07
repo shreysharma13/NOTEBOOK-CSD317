@@ -1,0 +1,102 @@
+{% extends "base_vendor.html" %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+{% block content %}
+
+
+<script>
+ function myFunction() {
+   var x = document.getElementById("hid_div");
+   if (x.style.display === "none") {
+     x.style.display = "block";
+   } else {
+     x.style.display = "none";
+   }
+ }
+
+ function myFunction2() {
+   var x = document.getElementById("hid_div2");
+   if (x.style.display === "none") {
+     x.style.display = "block";
+   } else {
+     x.style.display = "none";
+   }
+ }
+</script>
+<p class="small">Update your Stocks </p>
+<div id="hid_div2">
+ <form class="" method="POST" action= "{{ url_for('v_update_stock_page') }}" >
+   <div>
+     <div class="form-group">
+         <input class="myinput" type="text" name = "p_id_btn" class="form-control item" placeholder="product id" required>
+     </div>
+     <div class="form-group">
+         <input class="myinput" type="text" name = "pquant_btn" class="form-control item" placeholder="quant" required>
+     </div>
+     <div class="form-group">
+         <input class="myinput" type="text" name = "qunit_btn" class="form-control item" placeholder="Units " required>
+     </div>
+     <div class="form-group">
+         <button class="mybtn"name="update_stk_btn" class ="btn btn-block submit" value="val_stk">update stock</button>
+     </div>
+
+  </div>
+</form>
+</div>
+
+
+
+
+<p>
+  <button class="mybtn" onclick="myFunction()">Add Product</button>
+</p>
+
+
+<div style="display:none" id="hid_div">
+ <form class="" method="POST" action= "{{ url_for('v_update_stock_page') }}" >
+   <div>
+     <div class="form-group">
+         <input class="myinput" type="text" name="pid_btn" class="form-control item" placeholder="product id" required>
+     </div>
+     <!-- <div class="form-group">
+         <input class="myinput" type="text" name = "vid_btn" class="form-control item" placeholder="vendor id" required>
+     </div> -->
+     <div class="form-group">
+         <input class="myinput" type="text" name = "ptyp_btn" class="form-control item" placeholder="product type" required>
+     </div>
+     <div class="form-group">
+         <input class="myinput" type="text" name = "pname_btn" class="form-control item" placeholder="name" required>
+     </div>
+     <div class="form-group">
+         <input class="myinput" type="text" name = "p_cp_btn" class="form-control item" placeholder="cost price" required>
+     </div>
+     <div class="form-group">
+         <input class="myinput" type="text" name = "p_sp_btn" class="form-control item" placeholder="selling price" required>
+     </div>
+     <div class="form-group">
+         <button class="mybtn" name="update_stk_btn" class ="btn btn-block submit" value="val_prod">Enter</button>
+     </div>
+
+  </div>
+</form>
+</div>
+
+
+
+
+
+  <!-- <p>
+    <button onclick="myFunction2()">Add Stock</button>
+  </p> -->
+
+
+
+
+{% endblock %}
+  </body>
+</html>

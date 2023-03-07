@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap">
+     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/master.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/transaction_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/master.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/form_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/transaction_style.css') }}">
+
+    <title></title>
+  </head>
+  <body class="c_body_bg">
+    <div style="border:10px"class="topnav" id="myTopnav">
+  <a href="{{ url_for('customer_page') }}">Home</a>
+  <!-- <a href="{{ url_for('charts_page') }}">Charts</a> -->
+  <a href="{{ url_for('stock_page') }}">Stock</a>
+  <a style="width: auto;
+  margin-left: 32%;
+  margin-right: 32%;"class="navbar_head" > Welcome, {{name}} </a>
+  <a style="float:right"href="{{ url_for('logout_page') }}">Log Out</a>
+
+</div>
+<!-- <h2 class="welcome">Welcome, <span class="underlined underline-clip"> {{name}}! </span></h2> -->
+    {% block content %}
+    {% endblock %}
+
+  </body>
+</html>

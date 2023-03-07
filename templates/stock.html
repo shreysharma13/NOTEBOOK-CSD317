@@ -1,0 +1,90 @@
+{% extends "base_customer.html" %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <script>
+    function myFunction() {
+      console.log("Hello world!");
+    }
+    </script>
+
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    {% block content %}
+
+    <html>
+      <head>
+        <script>var temp_var ='{{ url_for('transaction_list_page') }}';</script>
+      </head>
+      <body>
+        <p class = "small scale-in"> View stocks of:</p>
+        <form method="post">
+        {% for row in data %}
+        <p>
+          <!-- <a href=temp_var>{{row[1]}}</a> -->
+          <button class="mybtn" name="vstock_btn"class ="btn btn-block submit" value={{row[0]}}>{{row[1]}}</button>
+        </p>
+        {% endfor %}
+        </form>
+        <p class = "small scale-in"> Product ID Key:</p>
+        <div class="container">
+
+          <div class="table">
+            <div class="table-header">
+
+<div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">product id</a></div>
+<div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">type</a></div>
+<div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">Name</a></a></div>
+<div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Price</a></div>
+</div>
+        {% for row in p_det %}
+        <div class="table-row">
+          <div class="table-data">{{row[0]}}</div>
+          <div class="table-data">{{row[1]}}</div>
+          <div class="table-data">{{row[2]}}</div>
+          <div class="table-data">{{row[4]}}</div>
+        </div>
+{% endfor %}
+      </div>
+      </div>
+
+
+
+
+         {% if table_data %}
+        <h2 class="transaction_subtitle">Viewing Stock</h2>
+        <div class="container">
+
+        	<div class="table">
+        		<div class="table-header">
+        			<div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">vendor_id</a></div>
+        			<div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">product_id</a></div>
+        			<div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">Quantity</a></div>
+        			<div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Units</a></div>
+        		</div>
+        		<div class="table-content">
+              {% for row in table_data %}
+        			<div class="table-row">
+        				<div class="table-data">{{row[0]}}</div>
+        				<div class="table-data">{{row[1]}}</div>
+        				<div class="table-data">{{row[2]}}</div>
+        				<div class="table-data">{{row[3]}}</div>
+        			</div>
+              {% endfor %}
+        		</div>
+        	</div>
+        </div>
+        {% endif %}
+
+
+
+        {% endblock %}
+
+
+  </body>
+</html>

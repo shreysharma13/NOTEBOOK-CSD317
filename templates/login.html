@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Users/shreysharma/Documents/Shrey SNU/Fifth Sem(Monsoon2022)/CSD317(DBMS)/DBMS Project/virtualenv_DBMS_project/static/css/form_style.css">
+      <!-- <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='css/master.css') }}"> -->
+      <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='css/form_style.css') }}">
+      <meta charset="utf-8">
+    <title>MySql Project</title>
+  </head>
+  <body class="mybody_bg">
+    <div class="registration-form">
+            <form method="POST" action="{{ url_for('home_page') }}">
+                <div class="form-group">
+                  <p class=" small2 scale-in form-control item"> {% block content %} {{session['message']}}{% endblock %} </p>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="login_username_btn" class="form-control item" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name = "login_password_btn" class="form-control item" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <button name="login_btn"class ="btn btn-block submit" value="val_login">Login</button>
+                </div>
+                <p>Dont have an account?</p>
+                <p>
+                  <a href="{{ url_for('signup_page') }}">Signup</a>
+                </p>
+
+            </form>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,46 @@
+{% extends "base_vendor.html" %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <title></title>
+  </head>
+  <body>
+    {% block content %}
+    <h2 class="transaction_subtitle">My Transaction History</h2>
+    <div class="container">
+
+    	<div class="table">
+    		<div class="table-header">
+
+    			<div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Transaction id</a></div>
+    			<div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">cust-id</a></div>
+    			<div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">ven-id</a></div>
+    			<div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">prod-id</a></div>
+          <div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">date</a></div>
+    			<div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">quantity</a></div>
+    			<div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">unit</a></div>
+    		</div>
+    		<div class="table-content">
+          {% for row in trans %}
+    			<div class="table-row">
+    				<div class="table-data">{{row[0]}}</div>
+    				<div class="table-data">{{row[1]}}</div>
+    				<div class="table-data">{{row[2]}}</div>
+    				<div class="table-data">{{row[3]}}</div>
+    				<div class="table-data">{{row[4]}}</div>
+					<div class="table-data">{{row[5]}}</div>
+					<div class="table-data">{{row[6]}}</div>
+					
+
+    			</div>
+          {% endfor %}
+    		</div>
+    	</div>
+    </div>
+
+{% endblock %}
+
+  </body>
+</html>
